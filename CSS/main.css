@@ -1,0 +1,31 @@
+.profile {
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* class 셀렉터 */
+.profileName {
+    text-align: center;
+    font-size: 16px;
+}
+
+/* 이렇게 쓰면 모든 p태그 스타일 */
+/* 태그 셀렉터 */
+p {
+    text-align: center;
+    color: green;
+}
+
+/* id 셀렉터 */
+/* class 말고 다르게 스타일 넣는 법 */
+#special {
+    text-align: center;
+    color: blue;
+}
+
+.content {
+    color: red;
+
+}

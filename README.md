@@ -113,3 +113,55 @@ font-weight : 100~900
 Q. style에 넣을 수 있는 스타일명들 다 외워야하나요?
 
 A. 필요하면 검색하기. 자주쓰는건 외워두기
+
+## CSS 파일 만들고 첨부하는 법
+Cascading Style Sheet : 스타일 보관파일
+
+style이 너무 길면 .css로 뺄 수 있다
+
+CSS파일에 스타일 보관하기
+
+1. 일단 <link>로 CSS 파일연결
+2. css파일에 style 작성
+3. html 파일에서 작명한거 사용
+
+```html
+<link href="css/main.css" rel="stylesheet">
+<!--css/main.css는 전문용어로 상대경로라고 한다-->
+```
+
+class=”스타일 이름”
+
+- CSS파일에 style 보관하고 class 작명
+- html 파일에선 class=”작명한거”
+
+Q. 제목도 스타일도 CSS파일 이용해서 class로 축약해보기
+
+- 클래스명은 점찍고 작명하시오 (.profile)
+- 이름 중복은 피합시다
+
+모든 p태그 스타일
+
+class 말고 다르게 스타일 넣는 법
+
+#special = id
+
+.class vs #id 어떤걸로 스타일 넣어야 하나 → class 추천
+
+id는 보통 사용하지 않음. 자바스크립트 개발할 때 사용하고 스타일을 할 때는 거의 사용하지 않음
+
+CSS selector 
+
+class selector
+
+id selector
+
+tag selector
+
+로 나뉜다
+
+Q. 스타일이 겹칠 경우 우선순위에 따라 정해짐
+
+id > class > tag 순으로 우선순위가 높다
+
+id가 가장 우선순위가 높음
