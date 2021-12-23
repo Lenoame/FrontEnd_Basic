@@ -165,3 +165,50 @@ Q. 스타일이 겹칠 경우 우선순위에 따라 정해짐
 id > class > tag 순으로 우선순위가 높다
 
 id가 가장 우선순위가 높음
+
+## 웹레이아웃의 기초 : div를 이용한 네모네모 박스 디자인
+네모 박스를 넣고 싶으면 <div></div> 태그 사용
+
+division이라는 뜻
+
+margin (상하좌우 여백)
+
+top left right bottom
+
+padding (상하좌우 안쪽 여백)
+
+margin과 똑같이 사용 가능
+
+border (테두리) border의 두께, 종류, 색을 지정해주기
+
+border-radius (테두리 둥글게)
+
+<div> <p> <h> 특장
+
+display : block 기본으로 가지고 있다
+
+가로행을 전부 차지하고 싶을 때 준다
+
+<div> 안 글자는 대충 적지 말고 다른태그안에 넣어주기
+
+부모태그에 스타일을 줘도 잘 된다
+
+왜냐면 일부 스타일은 자동으로 부모 → 자식 inherit(상속) 됩니다
+
+inherit 지원하는 스타일은 정해져 있음
+
+font-size font-family color 등
+
+박스에 그림자 스타일을 주려면 
+
+```CSS
+box-shadow: x좌표 y좌표 (blur-radius : 블러 효과) (spread-radius : 확산효과) (color)
+```
+
+none : 그림자 효과 없애기
+
+initial : 기본값
+
+inherit : 부모 요소를 상속받기
+
+를 사용하면 된다

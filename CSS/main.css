@@ -11,21 +11,21 @@
     font-size: 16px;
 }
 
-/* 이렇게 쓰면 모든 p태그 스타일 */
-/* 태그 셀렉터 */
-p {
-    text-align: center;
-    color: green;
-}
-
-/* id 셀렉터 */
-/* class 말고 다르게 스타일 넣는 법 */
-#special {
-    text-align: center;
-    color: blue;
-}
-
 .content {
-    color: red;
-
+    text-align: center;
 }
+
+.box {
+    width: 100px;
+    background-color: cadetblue;
+    margin: 30px;
+    padding: 40px;
+    border: 4px solid black;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    box-shadow: 5px 5px 5px black;
+}
+
