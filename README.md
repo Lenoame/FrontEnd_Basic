@@ -212,3 +212,29 @@ initial : 기본값
 inherit : 부모 요소를 상속받기
 
 를 사용하면 된다
+
+## 호환성 좋은 float
+float 이용한 레이아웃 만들기
+
+레이아웃을 만들기 전에 전체를 감싸는 container 박스 만들어두면 유용하다
+
+보통 wrapper 박스 or container 박스라고 함
+
+헤더부분 만들기
+
+```css
+/* width 를 % 로 주면 부모 태그의 요소 기준으로 해준다*/
+.header {
+	width: 100%;
+}
+```
+
+모든 <div>는 display: block 을 가진다 (가로행을 전부 차지한다)
+
+float : left 요소를 붕 띄워서 왼쪽정렬
+
+clear : both float 다음에 오는 요소에게 주면 float로 발생하는 이상한 현상 해결가능
+
+float 쓰고 나서 다음에 오는 요소는 clear 주는게 좋다
+
+가로배치하는 법만 알면 원하는 레이아웃 전부 만들 수 있음
