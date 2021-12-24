@@ -1,0 +1,27 @@
+.container {
+    width: 800px;
+
+}
+
+.left_box {
+    width: 80%;
+    height: 200px;
+    float: left;
+}
+
+.left_header {
+    width: 100%;
+    height: 20%;
+    
+}
+
+.left_footer {
+    width: 100%;
+    height: 80%;
+}
+
+.right_box {
+    width: 20%;
+    height: 200px;
+    float: left;
+}

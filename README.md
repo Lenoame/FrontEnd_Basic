@@ -238,3 +238,48 @@ clear : both float 다음에 오는 요소에게 주면 float로 발생하는 �
 float 쓰고 나서 다음에 오는 요소는 clear 주는게 좋다
 
 가로배치하는 법만 알면 원하는 레이아웃 전부 만들 수 있음
+
+## 귀찮은 inline-block
+박스 가로로 배치할 수 있는 다른 방법
+
+주석 : 이 코드는 읽지 말아주세요
+
+ctrl + /
+
+맥은 command + /
+
+협업할 때 주석 넣어주는게 중요함
+
+inline-block 사용해서 가로로 배치해보자
+
+display: block (한 행을 전부 차지)
+
+display: inline-block (내 크기만큼 차지)
+
+inline-block 사용하면 박스사이 공백제거가 귀찮음
+
+inline-block 사용시 공백제거 방법
+
+1. 박스사이 주석기호 사용
+2. 부모태그에 font-size: 0px; 자식태그에 폰트사이즈 다시 설정하면 글씨가 보임
+
+참고 : 부모 태그로부터 inherit 되는 스타일은 중요도가 가장 낮음
+
+inline-block 박스 안에 글쓰면 안에다 공백 못씀 글씨 쓰면 이상해짐
+
+해결법 : vertical-align: top; 을 스타일에 적용
+
+vertical-align 상하정렬을 위로 보낼건지 밑으로 보낼건지 설정하는 것
+
+top or bottom
+
+공책에 글씨 적을 때 baseline이 존재하는 것이 html에도 적용됨
+
+baseline 이 옆에 존재하면 display : inline-block 요소들이 baseline 위에 오려고 한다
+
+display : inline-block은 자기 크기만큼 자리차지한다
+
+- 공백제거 필요
+- 주변에 글이 있으면 가끔 이상해진다
+
+팁 <div> 박스부터 배치하고 내용채우기 시작하면 쉽다
