@@ -25,12 +25,14 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    color: white;
+    color: rgb(255, 255, 255);
     box-shadow: 5px 5px 5px black;
 }
 
 .container {
     width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header {
@@ -60,3 +62,24 @@
     clear: both;
 }
 
+.blog-content {
+    width: 80;
+    height: 200px;
+    background: #eee;
+    float: left;
+}
+
+.blog-img {
+    width: 20%;
+    height: 200px;
+    background: yellow;
+    float: left;
+}
+
+.blog-profile {
+    width: 50px;
+}
+
+.blog-name {
+    float: left;
+}
