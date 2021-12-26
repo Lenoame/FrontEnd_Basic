@@ -283,3 +283,55 @@ display : inline-block은 자기 크기만큼 자리차지한다
 - 주변에 글이 있으면 가끔 이상해진다
 
 팁 <div> 박스부터 배치하고 내용채우기 시작하면 쉽다
+
+## Blog 글목록 만들기
+class 이름 작명할 땐 의미전달도 중요하다
+
+<h> <p> 도 display: block; 을 가지고 있음. 한 행을 다 차지함
+
+h, p 태그는 기본적으로 margin을 가지고있다
+
+## 셀렉터를 이용해 CSS 코드 양 줄이기
+float 관련 문제
+
+<div> 에 margin을 주더라도 글자들이 안밀려난다
+
+margin을 크게 주던가
+
+태그 윗쪽에 가상의  div 박스를 하나 만들고 clear: both;를 주기
+
+float 준 요소 다음에 clear: both; 넣은 <div> 추가하는 것을 추천
+
+navbar 만들 때 <div>  대신 <nav>를 써도 됩니다
+
+기능은 <div>와 똑같다. 하지만 <div> 보다 읽기 쉬울 수 있음
+
+<section>
+
+<footer>
+
+기능은 <div> 와 똑같음
+
+```css
+.navbar li {
+	display: inline-block;
+}
+
+/* css selector 문법 중 공백 : ~안에있는 모든자식태그에 적용 */
+
+.navbar>li {
+	display: inline-block;
+}
+
+/* selector 문법 > ~ 안에 있는 직계자식(바로 밑에 있는 자식) */
+```
+
+보통 넣을 링크가 정해지지 않으면 <a href=”#”></a> 라고 쓴다
+
+text-decoration: none; 링크되는 글자에 밑줄을 제거할 수 있다
+
+방문 후 보라색되는 것도 변경가능 → 구글링 해보기
+
+참고 : 태그에 class 2개 이상 부여하려면? → 띄어쓰기 하고 클래스명 집어넣기
+
+좋은 코드는 누구나 봤을 때 직관적으로 이해할 수 있는 코드
