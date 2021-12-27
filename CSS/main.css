@@ -111,5 +111,21 @@
 .main-title {
     color: white;
     font-size: 40px;
+    text-align: center;
     margin-top: 300px;
+}
+
+.main-paragraph {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
+
+.main-button {
+    border: 1px solid black;
+    font-size: 16px;
+    text-align: center;
+    background-color: white;
+    margin: auto;
+    display: block;
 }
