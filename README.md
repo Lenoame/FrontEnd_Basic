@@ -335,3 +335,61 @@ text-decoration: none; 링크되는 글자에 밑줄을 제거할 수 있다
 참고 : 태그에 class 2개 이상 부여하려면? → 띄어쓰기 하고 클래스명 집어넣기
 
 좋은 코드는 누구나 봤을 때 직관적으로 이해할 수 있는 코드
+
+## 배경 이쁘게 넣는 스킬들 & margin collapse
+경로에서 ../ 상위폴더로 이동하라는 뜻
+
+배경이미지는 꽉 차지 않으면 반복된다
+
+기본적으로 배경이미지는 왼쪽부터 채워짐
+
+background-position: center 가운데부터 채워주세요
+
+background-attachment 스크롤시 배경위치 조정가능
+
+filter: brightness(%) 높일 수록 밝아짐
+
+(안에 글씨 있으면 글씨에도 필터입혀짐)
+
+배경 여러개 겹치기
+
+background-image: url(), url();
+
+배경에 색 overlay 줄 수도 있음
+
+margin collapse 현상
+
+박스 2개가 위쪽 테두리가 겹칠경우 → margin도 합쳐졌다
+
+해결법 : 싫으면 테두리 안붙게하기 → padding: 1px;
+
+윗박스 margin-bottom과 아래박스 margin-top이 만날 경우 마진이 큰 것으로 적용된다
+
+(숙제) 제목 밑에 이쁘게 글, 버튼 넣어오셈
+
+```css
+.main-background {
+	width: 100%;
+	height: 500px;
+	background-image: url(../img/shoes.jpg), url(배경 여러개 겹치기 가능); background 이미지 넣기 / ..은 상위폴더로 이동하라는 뜻
+	background-size: cover; 배경이미지는 꽉 차지 않으면 반복된다.
+	background-size: cover; 배경짤려도 상관없으니 빈공간 없이 배경으로 꽉 채워라 
+	contain : 배경 짤리지 않게 해주세요
+	background-repeat: no-repeat; background 조정하기
+	background-position: right, center... ; 위치조정
+	background-attachment: fixed; 스크롤시 배경 위치 고정 가능
+	filter: brightness(70%); 박스에 보정입히기 saturate 채도 / 안에 글씨 있으면 글씨에도 필터입혀짐
+	padding: 1px;
+}
+
+.main-title {
+	color: white;
+	font-size: 40px;
+	margin-top: 300px;
+}
+
+margin collapse 현상
+박스 2개가 위쪽 테두리가 겹침 > 이럴 경우 margin도 합쳐짐
+- 싫으면 테두리 안붙게하셈 - padding: 1px;
+박스 2개 위아래 테두리가 겹침 > 테두리 2개가 만나는 경우 margin도 겹쳐서 큰 마진이 적용됨
+```
