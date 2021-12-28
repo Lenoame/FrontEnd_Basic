@@ -393,3 +393,41 @@ margin collapse 현상
 - 싫으면 테두리 안붙게하셈 - padding: 1px;
 박스 2개 위아래 테두리가 겹침 > 테두리 2개가 만나는 경우 margin도 겹쳐서 큰 마진이 적용됨
 ```
+
+## position과 좌표 레이아웃 만들기
+<body> 기본 margin 있음
+
+body태그에 margin: 0px; 주면 여백없는 웹사이트 만들 수 있다
+
+class명 중복 피하려면 접두어 많이 활용하기
+
+좌표속성으로 배치 가능 → top: 100px
+
+position 부여하면
+
+1. 좌표이동가능
+2. 공중에 뜸
+
+relative - 내 원래 위치가 기준
+
+absolute - 부모태그가 기준 (relative 가진 부모)
+
+fixed - 현재 화면이 기준
+
+position: relative; 내 원래 위치를 기준으로 이동하세요~
+
+bottom left right top 으로 위치 조정
+
+position: static; 좌표이동 X
+
+position: fixed; 현재 화면이 기준
+
+현재화면을 기준으로 고정되는 요소가 필요하면 사용하기 → 상단 메뉴 or 구매버튼
+
+position: absolute; 내 부모 태그 중에 position: relative 가진 부모 기준
+
+참고 : position: absolute 준 요소 가운데 정렬 하려면
+
+left: 0; right: 0; margin: auto;
+
+적절한 width주기
