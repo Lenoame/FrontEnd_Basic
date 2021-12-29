@@ -431,3 +431,59 @@ position: absolute; 내 부모 태그 중에 position: relative 가진 부모 �
 left: 0; right: 0; margin: auto;
 
 적절한 width주기
+
+## position 숙제 & 반응형 width & box-sizing
+오늘 배울 내용 1
+
+z-index
+
+공중에 떠있는 애들이 많으면.. 누가 맨 앞에 올 것인가
+
+z-index가 높을수록 앞에 온다
+
+오늘 배울 내용 2
+
+max-width
+
+가변적인 요소로 만들고 싶으면 %단위로 설정해주면 된다
+
+부모 요소 크기에 따라 %단위로 조정할 수 있다
+
+현재 창의 width는 곧 <body>의 width
+
+반응형 웹페이지를 만들고 싶으면 %를 사용한다
+
+width %의 문제는 PC 사이즈에서 너무 크다 → max-width와 함께 쓰기
+
+min-width도 있고 max-height 등을 사용하여 최대 최소 크기를 설정할 수 있다
+
+(중요) width는 content(글작성) 영역의 너비를 의미함
+
+border와 padding은 width와 상관없다
+
+박스에 width: 600px; 줘도 padding: 50px;을 주면 실제 보이는 width는 700px이다
+
+(해결책) content부분만 width로 설정하지 말고 padding, border 포함하라고 시키면 됩니다
+
+box-sizing: border-box; 이러면 padding, border가 포함된다
+
+box-sizing: content-box; 이러면 padding, border가 포함이 안된다
+
+```css
+div {
+	box-sizing: border-box;
+}
+이렇게 해놓고 개발시작하면 편하다
+```
+
+숙련자일수록 CSS 파일 맨 위에 써놓는 코드가 많다 → 호환성 이슈 해결책부터 첨부하는 경우가 많음
+
+(참고) 브라우저마다 디자인이 다르게 보일 수 있다
+
+<button> <input> 이런 태그는 크롬과 파이어폭스 기본 디자인이 다르다
+
+<small> <main> 이런 태그는 일부 IE 브라우저에서 이상하게 보인다
+
+검색 키워드 : normalize.css → 호환성 문제를 해결해주는 CSS 파일을 링크해두면 작업하기 편해짐
+
+CSS Normalize 링크 :  https://github.com/necolas/normalize.css/blob/master/normalize.css
