@@ -487,3 +487,52 @@ div {
 검색 키워드 : normalize.css → 호환성 문제를 해결해주는 CSS 파일을 링크해두면 작업하기 편해짐
 
 CSS Normalize 링크 :  https://github.com/necolas/normalize.css/blob/master/normalize.css
+
+## form & input
+<form action=”경로”>
+
+작성한 내용이 어떤 서버경로로 전달될지
+
+<input type=”text”> 일반 글자 입력할 때 
+
+<input type=”password”> 패스워드 입력할 때
+
+<input type=”email”> 이메일 입력할 때
+
+<input type=”date”> 날짜 입력할 때
+
+<input type=”checkbox”> 체크박스 생성
+
+<input type=”radio”> 라디오 버튼 생성
+
+<input type=”text” value=”값을 미리 채워넣을 수 있음”>
+
+<input placeholder=”배경글자”> 추천하고 싶은 글자 넣어둘 수 있음
+
+<input name=”인풋이름”> 서버개발시 필요하다 → 이 이름으로 서버 데이터베이스에 저장됨
+
+<!-- 선택박스 만들기 -->
+<select>
+<option></option>
+</select>
+<textarea>큰 인풋 만들기</textarea>
+
+<textarea rows=”10”> 사이트 로딩했을 때 얼마나 큰 사이즈로 인풋박스를 보여줄 것인지
+
+크게 외울 필요가 없음 → 필요할 때 구글 찾아보기
+
+전송버튼 만들기
+
+<input type="submit">
+<button type="submit">전송</button>
+
+input 스타일을 할 때 input[속성명=속성값] 으로 스타일을 주면 더 세세한 요소에 스타일을 줄 수 있다
+
+```css
+input [type=text] {
+	padding: 10px;
+	font-size: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+```

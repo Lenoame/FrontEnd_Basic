@@ -7,6 +7,13 @@ body {
     margin: 0px;
 }
 
+input[type=text] {
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
 .profile {
     width: 100px;
     display: block;
@@ -166,4 +173,11 @@ body {
     text-align: center;
     color: black;
     font-size: 14px;
+}
+
+.text-input {
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
 }
