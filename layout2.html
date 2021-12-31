@@ -21,15 +21,36 @@
             cumque voluptatum odit veniam debitis, voluptas error 
             fugiat perferendis eligendi rem fuga.</p>
     </div>
-    <form action="경로" >
-        <input type="text" class="text-input">
-        <!-- 선택박스 만들기 -->
-        <select>
-            <option></option>
-        </select>
-        <textarea rows="10">큰 인풋 만들기</textarea>
-        <input type="submit">
-        <button type="submit">전송</button>
-    </form>
+    
+    <div class="form-background">
+        <div class="form-white">
+            <form>
+                <div class="w-100">
+                    <h3>Contact Us</h3>
+                    <p>Your Email</p>
+                    <input class="form-input" type="email">
+                </div>
+                <div class="w-50">
+                    <p>First Name</p>
+                    <input class="form-input" type="text">
+                </div>
+                <div class="w-50">
+                    <p>Last Name</p>
+                    <input class="form-input" type="text">
+                </div>
+                <div style="clear: both"></div>
+
+                <div class="w-100">
+                    <p>Message</p>
+                    <textarea class="form-input form-message"></textarea>
+                </div>
+                <div>
+                    <input id="sub" type="checkbox">
+                    <label for="sub">Subscribe</label>
+                    <button class="yellow-button">SEND</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

@@ -536,3 +536,41 @@ input [type=text] {
 	border-radius: 5px;
 }
 ```
+
+## form & input 숙제 : Contact Us 섹션 만들기
+selector에서 콤마쓰면 중복선택가능
+
+```css
+div, input, textarea {
+    box-sizing: border-box;
+}
+```
+
+CSS 초보 특징 : 그때그때 class 새로 만들어서 쓴다
+
+CSS 고수 특징 : 만들어둔 class 재활용함
+
+장점 1. 개발시간 단축. 2. CSS 양이 줄어든다 3. 디자인에 통일감을 준다
+
+어떻게 class 만들어야 재사용이 가능할지 고민하기
+
+재사용했는데 스타일이 더 필요하면 공백넣고 class 명 추가하기
+
+<input> 옆에 글씨를 넣으려면 의미없는 태그 <span>을 많이 사용한다
+
+<span> 태그 보다는 <label> 태그가 더 좋음
+
+```html
+<input id="sub" type="checkbox">
+<label for="sub">Subscribe</label>
+```
+
+label의 for과 input의 id가 같으면 label의 글자를 누르면 input과 똑같이 동작시켜준다
+
+혹은 input 제목으로 label을 사용하기도 한다
+
+오늘 새로 배운 것들
+
+1. 셀렉터에 콤마쓰면 여러 개 동시 선택가능하다
+2. 재사용가능하게 class 만들기 -> 그럼 금방금방 실력 향상된다
+3. <label> 유용하다
