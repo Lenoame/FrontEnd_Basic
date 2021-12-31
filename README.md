@@ -574,3 +574,66 @@ label의 for과 input의 id가 같으면 label의 글자를 누르면 input과 �
 1. 셀렉터에 콤마쓰면 여러 개 동시 선택가능하다
 2. 재사용가능하게 class 만들기 -> 그럼 금방금방 실력 향상된다
 3. <label> 유용하다
+
+## 쓸데 많은 Table 레이아웃과 vertical-align 속성
+장바구니 페이지를 만들 때 표를 가끔 사용함
+
+표 만들땐 <table>
+
+가로줄 먼저 그리고 세로줄을 그리면 된다
+
+가로 행은 <tr> : table row
+
+세로 열 만들 땐 <td> : table data
+
+```html
+<table>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+```
+
+제목용 세로 열 만들 땐 <th>
+
+테두리가 없는 이유는 스타일링을 안했기 때문이다
+
+제목 행은 <thead> 안에
+
+일반 행은 <tbody> 안에 넣으면 좋다
+
+기능상 차이는 없다
+
+<table> 은 기본적으로 틈이 존재한다. 없애려면 border-collapse: collapse; 해주기
+
+```css
+table {
+	border-collapse: collapse;
+}
+```
+
+vertical-align: top/middle/bottom  셀 안의 요소 상하정렬
+
+vertical-align 세로정렬할 때 씁니다만...
+
+1. inline/inline-block 요소 간의 세로정렬할 때 vertical-align 씁니다
+
+super : 윗첨자(제곱)
+
+sub : 아랫첨자
+
+1. table 안에서 세로정렬할 때 vertical-align 씁니다 (top/middle/bottom 가능)
+
+display : inline; 항상 옆으로 채워지는 폭과 너비가 없는 요소
+
+(참고) 일반 <div>로 표 만들기
+
+```html
+<div style="display: table">
+	<div style="display: table-row">
+		<div style="display: table-cell"></div>
+		<div style="display: table-cell"></div>
+	</div>
+</div>
+```
