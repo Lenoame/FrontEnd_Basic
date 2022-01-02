@@ -637,3 +637,38 @@ display : inline; 항상 옆으로 채워지는 폭과 너비가 없는 요소
 	</div>
 </div>
 ```
+
+## Cart 페이지 만들기
+새로배울 내용 : nth-child 셀렉터 문법
+
+일부 브라우저에서 table의 border-radius 안 먹을 수 있음 (border-collapse와 함께하면)
+
+td 폭조정시 유의사항
+
+셀은 글자가 찌부되지 않도록 최소폭을 갖고 있음
+
+표는 하나만 셀 하나만 스타일을 줘도 모든 행이 공통 스타일이 된다
+
+```css
+.cell-long {
+    width: 700px;
+}
+td에게는 최대한 이만큼 차지해보세요
+```
+
+nth-child() 셀렉터
+
+```css
+.cart-table th:nth-child(2) {
+    width: 400px;
+}
+cart-table 클래스 안에 있는 th중에 2번째로 나오는 요소만 스타일링 해주세요
+```
+
+nth-child(n) 셀렉터 → n번째 등장하는 요소만 스타일링할 때.
+
+td 하나로 합치기 → colspan=”5” -> "이 td는 옆의 셀 5개를 합쳐주세요"
+
+```html
+<td colspan="5">
+```

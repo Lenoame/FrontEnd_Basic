@@ -12,7 +12,7 @@ div, input, textarea {
 }
 
 td, th {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 table {
@@ -231,4 +231,34 @@ table {
     display: block;
     margin-left: auto;
     background-color: yellow;
+}
+
+.cart-background {
+    width: 100%;
+    background-color: #c2d3de;
+    padding: 30px;
+}
+
+.cart-table {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+
+}
+
+/* 언제나 콤마로 축약가능 */
+.cart-table td, .cart-table th {
+    padding: 15px;
+    border-bottom: 2px solid #c2d3de;
+}
+
+.cell-long {
+    width: 700px;
+}
+
+/* cart-table 안에 th중에 2번째 나오는 애들 */
+.cart-table th:nth-child(2) {
+    width: 400px;
 }
