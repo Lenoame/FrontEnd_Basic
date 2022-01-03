@@ -672,3 +672,32 @@ td 하나로 합치기 → colspan=”5” -> "이 td는 옆의 셀 5개를 합�
 ```html
 <td colspan="5">
 ```
+
+## pseudo-class로 인터렉티브 버튼 만들기
+<button> <a> <input> 등 클릭할 때 스타일을 다르게 줄 수도 있음
+
+pseudo-class를 붙이면 됩니다
+
+마우스 올릴 때 스타일은 : hover (pseudo-class)
+
+클릭중 스타일은 : active (pseudo-class)
+
+커서 찍혀있을 때 스타일은 : focus (pseudo-class)
+
+넣을 땐 순서가 중요하다
+
+: hover 
+
+: focus
+
+: active
+
+pseudo-class엔 거의 모든 스타일 넣기 가능
+
+<input> 에도 많이 쓴다
+
+<a> 에도 많이 쓴다
+
+방문 전 링크 스타일은 : link
+
+방문 후 링크 스타일링은 : visited
