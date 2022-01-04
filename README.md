@@ -701,3 +701,44 @@ pseudo-class엔 거의 모든 스타일 넣기 가능
 방문 전 링크 스타일은 : link
 
 방문 후 링크 스타일링은 : visited
+
+## 코드양이 줄어드는 class 작명법 (OOCSS, BEM)
+조그만거 만들면 class 대충 만들어도 되는데 큰거 만들면 중복스타일 때문에 귀찮아짐
+
+고수 : 뼈대용 class, 살점용 class 각각 제작하기
+
+장점
+
+1. CSS양이 줄어듭니다
+2. 유지보수 편리
+
+버튼마다 class 만들어놨으면 다 수정해야됨...
+
+Object Oriented CSS 라고 부르는 작성 관습
+
+만들어두면 편한 Utility class (스타일 한두개만 들어있는 class)
+
+class 작명할 때 창의력이 부족하면 BEM룰 따라해보기
+
+Block__Element—Modifier
+
+class=”덩어리 이름__역할—세부특징”
+
+요즘은.. React, Vue로 HTML 만들게 되면 OOCSS, BEM 굳이 안써도 잘함
+
+React, Vue 쓰면 덩어리 (Component) 단위로 HTML 파일 나눠서 코드짠다 + Component에만 사용가능한 CSS 생성가능
+
+```html
+<!-- OOCSS Object Oriented CSS -->
+<button class="main-btn bg-red">더알아보기</button>
+<button class="main-btn bg-blue">구매하기</button>
+
+<!-- BEM Rule Block__Element--Modifier -->
+<div class="profile">
+	<img class="profile__img">
+	<h4 class="profile__title"></h4>
+	<p class="profile__content"></p>
+	<button class="profile__button--red">버튼1</button>
+	<button class="profile__button--blue">버튼2</button>
+</div>
+```
