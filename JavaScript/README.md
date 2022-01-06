@@ -52,3 +52,16 @@ document.getElementById() 이걸 셀렉터 Selector라고 부름
 document.getElementById('hello').innerHTML
 // innerHTML 부분을 다른 것으로 바꾸면 뭐든 바꿀 수 있다
 ```
+
+## onclick 속성으로 버튼 기능개발 : Alert 박스 만들기
+$는 jQuery 문법
+
+UI 만드는 법
+
+1. 미리 디자인해놓고 숨김
+2. 버튼누르거나 하면 보여줌
+
+```jsx
+<button onclick="">button</button>
+<!--이 버튼 click하면 이거 코드 실행해주세요-->
+```
