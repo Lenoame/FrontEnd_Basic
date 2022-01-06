@@ -9,10 +9,12 @@
 </head>
 <body>
     <div class="alert-box" id="alert">
-        Alert 박스
-        <button onclick="close()">닫기</button>
+        <p>아이디를 입력하세요</p>
+        <button onclick="open('none')">닫기</button>
     </div>
-    <button onclick="open()">button</button>
+    <button onclick="open('block', '아이디를 입력하세요')">버튼1</button>
+    <button onclick="open('block', '비밀번호를 입력하세요')">버튼2</button>
+
 
     <script>
         // document.getElementById('hello').innerHTML = '안녕';
@@ -20,12 +22,13 @@
         // document.getElementsById('hi').innerHTML = '올때바밤바';
         // document.getElementsById('hello').style.fontSize = '30px';
 
-        function open() {
-            document.getElementsById('alert').style.display = 'block';
-        }
+        // function close() {
+        //     document.getElementsbyId('alert').style.display = 'none';
+        // }
 
-        function close() {
-            document.getElementsbyId('alert').style.display = 'none';
+        function open(x, y) {
+            document.getElementById('alert').style.display = x;
+            document.getElementById('alert').innerHTML = y;
         }
 
     </script>
