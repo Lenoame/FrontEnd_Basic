@@ -54,14 +54,43 @@ document.getElementById('hello').innerHTML
 ```
 
 ## onclick 속성으로 버튼 기능개발 : Alert 박스 만들기
-$는 jQuery 문법
+($)는 jQuery 문법
 
 UI 만드는 법
 
 1. 미리 디자인해놓고 숨김
 2. 버튼누르거나 하면 보여줌
 
-```jsx
+```HTML
 <button onclick="">button</button>
-<!--이 버튼 click하면 이거 코드 실행해주세요-->
+이 버튼 click하면 이거 코드 실행해주세요
 ```
+
+## 자바스크립트 function 문법 정확한 사용법 / 에러 체크하기
+오늘배울거 : function + 대체 언제 function이 등장해야하는지
+
+function을 쓰면 긴 코드를 깔끔하게 한 단어로 축약가능
+
+초보 때 자주 겪는 흔한 버그
+
+변경할 HTML 요소는 위에
+
+JS로 조작은 밑에서 (정석)
+
+JS 조작을 위에서...? (에러남)
+
+변경할 HTML이 있으면 그거 하단에 JS 코딩해야한다
+
+이유 : HTML을 먼저 읽어야 JS로 조작이 가능
+
+초보 때 자주 겪는 에러메세지 1 : Uncaught TypeError: Cannot set property ‘innerHTML’ of null
+
+innerHTML의 왼쪽에 있는게 null 이라는 에러임
+
+초보 때 자주 겪는 에러메세지 2 : Uncaught TypeError : document.getElementsByid is not a function at ... 함수가 아닌데요~
+
+대문자여야하는데 소문자로 쓴 경우 (오타)
+
+대부분 함수명 오타
+
+숙제 : 닫기버튼에 적은 코드 function으로 축약해보기

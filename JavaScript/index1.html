@@ -10,15 +10,24 @@
 <body>
     <div class="alert-box" id="alert">
         Alert 박스
-        <button onclick="document.getElementsbyId('alert').style.display = 'none';">닫기</button>
+        <button onclick="close()">닫기</button>
     </div>
-    <button onclick="document.getElementsById('alert').style.display = 'block';">button</button>
+    <button onclick="open()">button</button>
 
     <script>
         // document.getElementById('hello').innerHTML = '안녕';
         // // 웹문서 ID hello인 HTML 요소 가져와 내부글자인
         // document.getElementsById('hi').innerHTML = '올때바밤바';
-        document.getElementsById('hello').style.fontSize = '30px';
+        // document.getElementsById('hello').style.fontSize = '30px';
+
+        function open() {
+            document.getElementsById('alert').style.display = 'block';
+        }
+
+        function close() {
+            document.getElementsbyId('alert').style.display = 'none';
+        }
+
     </script>
 </body>
 </html>
