@@ -167,3 +167,62 @@ Event는 여러가지가 있습니다
 - keydown
 - scroll
 - mouseover 등
+
+## jQuery 설치와 기초 셀렉터 정리
+JS 코드양을 줄일 수 있는 방법 발명 → jQuery 라고 이름지음
+
+jQuery를 사용하면 코드가 절반정도로 줄어듬
+
+jQuery 같은건 라이브러리라고 부릅니다
+
+근데 요즘에는 jQuery를 잘 안씀 → React가 HTML조작을 약간 더 잘함
+
+- 앱처럼 스무스하게 동작하는 앱
+- HTML 재활용 편리 등 장점이 있음
+- React 없으면 jQuery가 왕
+- jQuery로 개발된 사이트가 많음
+- 그래서 안 배울 수는 없다
+
+jQuery 설치 : jQuery 파일 받아서 첨부만 함
+
+- 구글에서 jquery 어쩌구.js 다운받아서
+- <script src=”js파일경로”></script>
+- jQuery cdn 검색
+- <script> 어쩌구 그대로 복붙
+
+```html
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+다른 사이트가 호스팅해주는 js파일 가져오는 것
+```
+
+버전
+
+- uncomporessed : 그냥 원본 파일
+- minified : 공백 제거 버전 (용량 줄어듬)
+- slim : 기능 많이 빠진 라이트버전
+- slim minified...
+
+jQuery 설치 위치 (중요)
+
+- jQuery 파일 첨부한 곳 밑에서부터 jQuery 문법 이용가능
+- <head> 태그에도 넣어도 되지만 HTML은 읽어들일 때 위에서부터 한줄씩 읽음
+- 이런 외부 js 파일 발견하면 잠깐 멈추고 파일 다운받아온다
+- 웹 구성요소들은 <body>에 있음 (이거 먼저 해석되는게 좋음)
+- <body> 끝나기 전에 넣는 것이 제일 좋음 (그냥 모든 JS들은 다 여기 넣기)
+
+```jsx
+document.getElementById('test').innerHTML = '???';
+$('#test')
+document.querySelector('#test')
+// 둘이 같은 의미
+```
+
+jQuery로 HTML 변경하는 법
+
+- $(’CSS셀렉터’).어쩌구()
+- 쌩자바스크립트에서 쓰던건 안된다 (jQuery와 호환이 되지 않는다)
+- .html() 안에 있는 모든 html
+- .text() 안에 있는 모든 글자
+- 출력만 해보고 싶을 때는 그냥 괄호안에 아무것도 안씀
+- .css(이걸, 이렇게) 스타일 속성 바꾸는 것
+- .attr(이걸, 이렇게) 속성 바꾸기 attribute
