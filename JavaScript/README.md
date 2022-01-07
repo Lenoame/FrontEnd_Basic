@@ -124,3 +124,46 @@ Q. 구멍이 여러개 필요한 경우?
 방법 1. Alert box용 HTML 두개 만들기 (하드코딩)
 
 방법 2. JS를 쓰면... HTML 변경이 쉬움 → 버튼1을 누르면 기존 alert box 띄워주는데 띄우기 전에 내부 글자를 “아이디 입력하셈” 으로 변경, “비번 입력하셈”으로 변경
+
+## 자바스크립트 이벤트리스너 addEvenetListener & UI 재사용하기
+버튼1을 누르면
+
+1. 제목을 “아이디입력하셈” 바꾸고
+2. Alert 박스 띄움
+
+버튼2를 누르면
+
+1. 제목을 “비번입력하셈” 바꾸고
+2. Alert 박스 띄우기
+
+코드를 못 짜겠으면 한글부터 짜고 JS로 번역 연습하기
+
+참고 : 셀렉터는 여러개 있음
+
+getElementsByClassName(’’)[인덱스] → class 명이 (’’) 인 것을 모두 찾아라
+
+class명이 여러개일 경우 인덱싱을 해주면 된다
+
+참고 : 파라미터를 쓰면 비슷한 함수 여러개 필요없음
+
+오늘 배울거 : EventListener
+
+여기 JS한글자 안쓰고도 기능개발 가능
+
+```jsx
+document.getElementById('close').addEventListener('click', function () {
+		
+	})
+// getElementById가 클릭되면 옆에 있는 함수를 실행해주세요
+```
+
+아직 배운게 많이 없어서 이해는 나중에
+
+위 코드의 click은 Event라고 부름
+
+Event는 여러가지가 있습니다
+
+- click
+- keydown
+- scroll
+- mouseover 등
