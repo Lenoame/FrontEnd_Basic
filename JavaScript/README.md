@@ -226,3 +226,44 @@ jQuery로 HTML 변경하는 법
 - 출력만 해보고 싶을 때는 그냥 괄호안에 아무것도 안씀
 - .css(이걸, 이렇게) 스타일 속성 바꾸는 것
 - .attr(이걸, 이렇게) 속성 바꾸기 attribute
+
+## jQuery 쓰는 이유 & 기초내용 빠른 정리
+왜 안해본거 숙제로 시키는지 → 내가 배운것만 할 수 있으면 기술자. 개발자가 아님
+
+jQuery 왜 쓰냐면
+
+1. 자바스크립트인데 코드 짧음 if for var function 등
+2. 쌩자바스크립트로 못하는 것을 할 수 있음 → 쌩자바스크립트는 요소 하나씩 변경해야한다. jQuery는 코드 한줄로 여러개 변경가능
+3. 쉽게 만드는 애니메이션 UI
+
+```jsx
+<p class="greeting">안녕하세요</p>
+<p class="greeting">안녕하세요</p>
+<p class="greeting">안녕하세요</p>
+
+document.getElementsByClassName('greeting')[0].innerHTML = '안녕';
+document.getElementsByClassName('greeting')[1].innerHTML = '안녕';
+document.getElementsByClassName('greeting')[2].innerHTML = '안녕';
+// getElements s가 붙으면 모두 찾아달라는 뜻 -> 그래서 순서를 지정해주어야된다
+// 그래서 복수의 class를 가진 것들을 전부 바꾸고 싶을 때는 여러 줄을 써야한다
+
+$('.greeting').html('안녕');
+$('.greeting').eq(0).html('안녕'); // 이렇게 인덱싱도 가능
+```
+
+```jsx
+// 버튼여러개에 이벤트리스너 부착은 jQuery 쓰면 간단. 쌩자바스크립트는 여러줄을 써야한다
+<button class="btn">버튼btn</button>
+<button class="btn">버튼btn</button>
+<button class="btn">버튼btn</button>
+
+document.getElementsByClassName('btn')[0].addEventListner('띄우주셈~~')
+document.getElementsByClassName('btn')[1].addEventListner('띄우주셈~~')
+document.getElementsByClassName('btn')[2].addEventListner('띄우주셈~~')
+
+$('.btn').on('click', 'h4',function() {
+	띄워주셈~~
+})
+// 위와 같음
+// jQuery 이벤트리스너 특 : 이 요소 안에 이 태그(h4)가 있으면 이 함수를 작동시켜주세요
+```
