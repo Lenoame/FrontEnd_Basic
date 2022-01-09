@@ -261,9 +261,35 @@ document.getElementsByClassName('btn')[0].addEventListner('띄우주셈~~')
 document.getElementsByClassName('btn')[1].addEventListner('띄우주셈~~')
 document.getElementsByClassName('btn')[2].addEventListner('띄우주셈~~')
 
-$('.btn').on('click', 'h4',function() {
+$('.btn').on('click', 'h4', function() {
 	띄워주셈~~
 })
 // 위와 같음
 // jQuery 이벤트리스너 특 : 이 요소 안에 이 태그(h4)가 있으면 이 함수를 작동시켜주세요
+```
+
+## Bootstrap 사용하기와 모달창 UI 개발
+부트스트랩 : 프론트엔드 component 모아놓은 라이브러리 (메뉴, 대문, 모달창, 폼 등)
+
+- 복붙식으로 HTML 개발 가능
+- 설치 : Get started 버튼 클릭
+- 중간에 Starter template 코드 복사 붙여넣기
+
+대문(junbotron) 만들기
+
+복붙식 웹개발 → 필요한 부분 CSS로 수정만 하면 개발 끝
+
+창을 하나 더 띄우는 HTML → 모달창
+
+1. HTML로 미리 디자인해놓고
+2. 숨겨놨다가
+3. 버튼 눌렀을 때 보여줌
+4. 모달창은 보통 HTML 멘 위에 만든다
+
+```css
+.black-background {
+  display: none;
+  /* visibility: hidden; UI에 자국이 남음 */
+  /* opacity: 0; 투명도 1로 바꾸면 보이긴 하지만 완전히 요소를 없앨 순 없음 */
+}
 ```

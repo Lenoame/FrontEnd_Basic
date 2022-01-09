@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="sub.css" rel="stylesheet">
-    <title>Index</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="sub.css" rel="stylesheet">
+  <title>Index</title>
 </head>
 <body>
-    <div class="alert-box" id="alert">
-        <p>Alert Box</p>
-        <button id="close"> X </button>
-    </div>
-    
-    <button onclick="open('아이디를 입력하세요')">버튼1</button>
-    <button onclick="open('비밀번호를 입력하세요')">버튼2</button>
+  <div class="alert-box" id="alert">
+    <p>Alert Box</p>
+    <button id="close"> X </button>
+  </div>
+
+  <button onClick="open('아이디를 입력하세요')">버튼1</button>
+  <button onClick="open('비밀번호를 입력하세요')">버튼2</button>
 
 
-    <script>
-        function open(x) {
-            document.getElementById('alert').innerHTML = x;
-            document.getElementById('alert').style.display = 'block';
-        }
+  <script>
+    function open(x) {
+      document.getElementById('alert').innerHTML = x;
+      document.getElementById('alert').style.display = 'block';
+    }
 
-        document.getElementById('close').addEventListener('click', function () {
-            document.getElementById('alert').style.display = 'none';
-        })
-    </script>
+    document.getElementById('close').addEventListener('click', function () {
+      document.getElementById('alert').style.display = 'none';
+    })
+  </script>
 </body>
 </html>
