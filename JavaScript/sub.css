@@ -25,6 +25,7 @@
   display: none;
   /* visibility: hidden; UI에 자국이 남음 */
   /* opacity: 0; 투명도 1로 바꾸면 보이긴 하지만 완전히 요소를 없앨 순 없음 */
+  border-radius: 0px;
 }
 
 .white-background {
@@ -35,3 +36,16 @@
   border-radius: 10px;
 
 }
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+}
+
+.nav-sub {
+  display: none;
+}
+
+

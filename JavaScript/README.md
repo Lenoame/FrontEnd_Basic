@@ -293,3 +293,32 @@ $('.btn').on('click', 'h4', function() {
   /* opacity: 0; 투명도 1로 바꾸면 보이긴 하지만 완전히 요소를 없앨 순 없음 */
 }
 ```
+
+## toggle 함수들 : Nav 메뉴 만들기
+쓸만한 jQuery 함수 몇개
+
+.hide()
+
+.show()
+
+.fadeIn() 서서히 보여줌
+
+.fadeOut() 서서히 사라짐
+
+.slideDown() 슬라이드로 나옴
+
+.slideUp()
+
+nav 메뉴 만들기
+
+- 버튼 누르면 서브메뉴 출현!
+1. 미리 HTML 만들어놓기
+2. 평소에는 안보이게
+3. 버튼 누르면 보이게
+4. 버튼 다시 누르면 안보이게
+
+.slideToggle(); slideDown/Up을 왔다갔다함
+
+.fadeToggle(); fadeIn/Out을 왔다갔다
+
+.toggle(); hide/show를 왔다갔다 해줌
