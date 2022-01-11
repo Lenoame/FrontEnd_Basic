@@ -16,6 +16,7 @@
     <div class="black-background">
       <div class="white-background">
         <p>로그인하세요</p>
+        <button id="close">Close</button>
       </div>
     </div>
 
@@ -38,6 +39,8 @@
       <a class="btn btn-primary btn-lg" id="log-in" href="#" role="button">Log In</a>
     </div>
 
+    <input id="test-input">
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -52,8 +55,20 @@
     -->
 
     <script>
+      if (3 >= 1) {
+        console.log('안녕')
+      } else {
+        console.log('반가워')
+      }
+
       $('#log-in').on('click', function() {
-        $('black-background').slideDown();
+        if ($('#test-input').val() == '안녕') {
+          $('black-background').fadeIn();
+        }
+      });
+
+      $('#close').on('click', function() {
+        $('.black-background').fadeOut();
       });
 
       $('#nav-sub-button').click(function() {
