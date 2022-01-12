@@ -48,4 +48,10 @@
   display: none;
 }
 
+#email-alert {
+  display: none;
+}
 
+#password-alert {
+  display: none;
+}

@@ -21,9 +21,11 @@
         <form action="login.php">
           <div class="form-group">
             <input type="email" class="form-control" placeholder="Email" id="email">
+            <p id="email-alert">이메일이 빈칸입니다</p>
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" class="form-control" placeholder="Password" id="password">
+            <p id="password-alert">비밀번호가 빈칸입니다</p>
           </div>
           <button type="submit" class="btn btn-primary">전송</button>
         </form>
@@ -66,26 +68,27 @@
     -->
 
     <script>
+
+      // 만약에 1 < 3 이면 이걸실행해주고요
+      // 만약에 1 < 2 이면 이걸 실행해주세요
+      // if (3 >= 1) {
+      //   console.log('안녕')
+      // } else if (1 < 2) {
+      //   console.log('안녕2')
+      // } else {
+      //   console.log('반가워')
+      // }
+
+      // if (1 == 2 && 2 == 3) {
+      //   console.log('참')
+      // } else if (2 == 4 || 2 == 3) {
+      //   console.log('거짓')
+      // }
+
       $('#log-in').on('click', function() {
         $('black-background').fadeIn();
       });
       
-      // 만약에 1 < 3 이면 이걸실행해주고요
-      // 만약에 1 < 2 이면 이걸 실행해주세요
-      if (3 >= 1) {
-        console.log('안녕')
-      } else if (1 < 2) {
-        console.log('안녕2')
-      } else {
-        console.log('반가워')
-      }
-
-      if (1 == 2 && 2 == 3) {
-        console.log('참')
-      } else if (2 == 4 || 2 == 3) {
-        console.log('거짓')
-      }
-
       $('#close').on('click', function() {
         $('.black-background').fadeOut();
       });
@@ -95,14 +98,32 @@
         // 만약에 지금 list가 안보이면 보이게 해주고요
         // 만약에 지금 list가 보이면 안보이게 해주세요
       });
-
-      // 폼이 전송되는 이벤트에 이 기능 실행
-      // 만약에 이메일 input에 입력된 값이 빈칸인 경우, 폼의 전송을 막음, 안내문 띄움
-      $('form').on('submit', function() {
-        if ($('#email').val() == null) {
-          e.preventDefault();
-          alert('이메일을 입력해주세요')
+      
+      // 폼이 전송될 때
+      //   만약에 이메일 input에 입력된 값이 빈칸인 경우,
+      //   폼의 전송을 막음, 안내문을 띄움
+      //   만약에 패스워드 input에 입력된 값이 빈칸인 경우,
+      //   폼의 전송을 막음
+      $('form').on('submit', function(e) {
+        if ($('#email').val() == '') { // email에 전송된 값이 빈칸이면
+          e.preventDefault(); // 폼전송을 막음
+          $('#email-alert').show(); // 안내문 띄움
         }
+
+        if ($('#password').val() == '') { // password의 값이 빈칸이면
+          e.preventDefault(); // 폼전송을 막음
+          $('#password-alert').show(); // 안내문을 띄움
+        }
+      });
+
+      // email input 안에 있는 값이 바꼈을 때 항상 아래 코드를 실행시켜줌
+      $('#email').on('change', function() {
+        $('#email-alert').show();
+      });
+
+      // input에 입력하고 있을 때 안내문을 띄워줌 (한글자만 쓰더라도)
+      $('#email').on('input', function() {
+        $('#email-alert').show();	
       });
 
     </script>

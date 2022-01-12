@@ -420,3 +420,48 @@ submit → 전송되는 이벤트
 
 - 이메일 input이 빈칸인 경우 전송이 안되어야 함
 - 빈칸이 아니면 전송(새로고침) 되어야 함
+
+## else if 활용 : 폼 전송시 공백체크 기능 만들기
+숙제) 이메일 input 공백체크 기능 만들기
+
+```jsx
+$('form').on('submit', function(e) {
+	if (이메일 input에 입력된 값 == 빈칸) {
+		e.preventDefault();
+		$('#email-alert').show();
+	}
+});
+```
+
+Q. 비밀번호 입력란도 공백검사하려면?
+
+코드를 짜기 전에 설계를 먼저 해야함
+
+프로그래밍 팁 : 한글로 먼저 작성해보세요 (pseudo code : 의사코드)
+
+```
+폼이 전송될 때
+	만약에 이메일 input에 입력된 값이 빈칸인 경우,
+	폼의 전송을 막음, 안내문을 띄움
+	만약에 패스워드 input에 입력된 값이 빈칸인 경우,
+	폼의 전송을 막음
+```
+
+코드를 해석을 해봐도 모르겠으면 작동시켜보면 된다
+
+form과 관련된 이벤트들
+
+- input(값이 변경될 때 실행)
+- change(값이 변경되고 focus 잃을 때 실행)
+
+```jsx
+// email input 안에 있는 값이 바꼈을 때 항상 아래 코드를 실행시켜줌
+$('#email').on('change', function() {
+	$('#email-alert').show();
+});
+
+// input에 입력하고 있을 때 안내문을 띄워줌 (한글자만 쓰더라도)
+$('#email').on('input', function() {
+	$('#email-alert').show();	
+});
+```
