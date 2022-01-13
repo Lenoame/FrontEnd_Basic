@@ -519,3 +519,27 @@ let 변수 : 재선언이 불가능한 변수를 만들 때 사용 → 코드가
 const 변수 : 재선언, 재할당 불가능, 범위가 {}
 
 프론트 환경에서는 const는 거의 안쓰고 백엔드에서 많이 쓴다
+
+## 애니메이션 UI 1 : jQuery Animate 함수
+JS 이용 : 사용자의 키입력, 마우스입력 체크가능
+
+CSS 속성을 서서히 변경하고 싶을 때 jQuery animate() 함수를 쓴다
+
+JS에서 - 는 뺄셈기호이기 때문에 camelCase로 쓴다
+
+CSS를 여러개 넣고 싶을 때는 , 로 구분
+
+jQuery animate( {CSS속성}, 동작속도(ms) );
+
+속도를 지정해줄 수 있음
+
+애니메이션 UI
+
+UI를 미리 만들어두고 감춘 뒤 서서히 동작시키면 된다
+
+```jsx
+// Show Menu 버튼을 누르면, 저 메뉴가 왼쪽에서 슬그머니 등장하게 해주세요
+$('#show-menu').on('click', function() {
+	$('.left-menu').animate({marginLeft: '0px'});
+});
+```

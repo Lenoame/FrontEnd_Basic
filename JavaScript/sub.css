@@ -34,7 +34,7 @@
   margin: 100px auto;
   padding: 20px;
   border-radius: 10px;
-
+  margin-top: -100px;
 }
 
 .nav-menu {
@@ -55,3 +55,13 @@
 #password-alert {
   display: none;
 }
+
+.left-menu {
+  width: 150px;
+  height: 100%;
+  background-color: black;
+  color: white;
+  position: fixed;
+  margin-left: -150px;
+}
+
