@@ -53,3 +53,48 @@ function upgrade369game(num) {
     console.log('통과')
   }
 }
+
+// Q. 이자율 계산하기 
+
+// 민준쿤은 은행에 예금을 하러 갔는데 예금 금액에 따라 이율이 달라지는 것을 보고 크게 당황했습니다. 
+
+// 예금액이 5만원 미만이면 이율이 연 15퍼센트,
+
+// 예금액이 5만원 이상이면 이율이 연 20퍼센트라고 합니다. 
+
+// (실은 높은 이율에 당황했습니다)
+
+// 그래서 민준이는 2년 후의 예금액을 자동으로 계산해주는 기계를 자바스크립트로 만들려고하는데 어떻게 코드를 짜면 될까요? 
+
+var deposit = 60000;
+var futureDeposit = 0;
+var years = 2;
+
+if (deposit < 50000) {
+  futureDeposit = deposit * (1.15 ** years);
+} else if (deposit >= 50000) {
+  futureDeposit = deposit * (1.2 ** years);
+}
+
+console.log(futureDeposit);
+
+// Q. 커피 리필을 이상하게 해주는 곳이 있습니다. 최대한 마실 수 있는 커피양을 계산해봅시다.  
+
+// 방금 마신 커피의 3분의 2만 리필해주는 카페가 있습니다. 
+
+// 예를 들면 처음 커피를 90ml 주문하면 첫 리필은 60ml를 해주며, 그 다음 리필은 40ml를 해주는 카페입니다. 
+
+// 횟수제한도 있습니다. 총 2회 리필이 가능합니다.
+
+// 그럼 처음 주문한 커피 양에 따라서 최대한 마실 수 있는 커피를 콘솔창에 계산해주는 코드를 작성해봅시다. 
+
+var firstCoffee = 360;
+var drankCoffee = 0;
+
+var refillCoffee = firstCoffee * 2/3; 
+drankCoffee = firstCoffee + refillCoffee;
+
+refillCoffee = refillCoffee * 2/3;
+drankCoffee = drankCoffee + refillCoffee;
+
+console.log(drankCoffee);
