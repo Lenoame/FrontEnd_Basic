@@ -124,15 +124,25 @@
       //   만약에 패스워드 input에 입력된 값이 빈칸인 경우,
       //   폼의 전송을 막음
       $('form').on('submit', function(e) {
-        if ($('#email').val() == '') { // email에 전송된 값이 빈칸이면
-          e.preventDefault(); // 폼전송을 막음
-          $('#email-alert').show(); // 안내문 띄움
+
+        // 만약에 지금 이메일 input에 입력된 값이 정규식과 비교했을 때 false인 경우
+        // 폼전송 막기, 안내창 띄우기
+        var inputEmail =$('#email').val();
+        if ( /\S+@\S+\.\S+/.test(inputEmail) == false) {
+          e.preventDefault();
+          $('#email-alert').show();
         }
 
-        if ($('#password').val() == '') { // password의 값이 빈칸이면
-          e.preventDefault(); // 폼전송을 막음
-          $('#password-alert').show(); // 안내문을 띄움
-        }
+        // if ($('#email').val() == '') { // email에 전송된 값이 빈칸이면
+        //   e.preventDefault(); // 폼전송을 막음
+        //   $('#email-alert').show(); // 안내문 띄움
+        // }
+
+        // if ($('#password').val() == '') { // password의 값이 빈칸이면
+        //   e.preventDefault(); // 폼전송을 막음
+        //   $('#password-alert').show(); // 안내문을 띄움
+        // }
+
       });
 
       // email input 안에 있는 값이 바꼈을 때 항상 아래 코드를 실행시켜줌
