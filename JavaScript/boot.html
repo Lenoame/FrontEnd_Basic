@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     
@@ -79,6 +79,23 @@
         $('.left-menu').animate({marginLeft: '0px'});
       });
 
+      // $('#log-in').on('click', function() {
+      //   $('.black-background').css('transform', 'translateY(0px)' );
+      // });
+      
+      $('#log-in').on('click', function() {
+        $('.black-background').addClass('slide-down')
+      });
+
+      $('#close').on('click', function() {
+        $('.black-background').hide().animate({ marginTop : '-1200px'})
+      });
+
+      $('#nav-sub-button').click(function() {
+        $('.nav-sub').slideToggle();
+        // 만약에 지금 list가 안보이면 보이게 해주고요
+        // 만약에 지금 list가 보이면 안보이게 해주세요
+      });
     </script>
 
     <script>
@@ -99,15 +116,7 @@
       //   console.log('거짓')
       // }
 
-      $('#log-in').on('click', function() {
-        $('black-background').fadeToggle();
-      });
 
-      $('#nav-sub-button').click(function() {
-        $('.nav-sub').slideToggle();
-        // 만약에 지금 list가 안보이면 보이게 해주고요
-        // 만약에 지금 list가 보이면 안보이게 해주세요
-      });
       
       // 폼이 전송될 때
       //   만약에 이메일 input에 입력된 값이 빈칸인 경우,

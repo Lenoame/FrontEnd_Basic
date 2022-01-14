@@ -543,3 +543,59 @@ $('#show-menu').on('click', function() {
 	$('.left-menu').animate({marginLeft: '0px'});
 });
 ```
+
+## 애니메이션 UI 2 : Slide Down 모달창 만들기 & 애니메이션 필수 팁
+애니메이션 만드는 방법
+
+1. 시작화면/최종화면 만들기
+2. 자바스크립트로 트리거하기
+3. 스무스한 동작은 animate 함수 사용
+
+jQuery 함수들 순서대로 실행하기 스킬 (함수 연결하면 끝)
+
+요즘 스타일 애니메이션 개발 방법
+
+1. 시작화면/최종화면 만들기
+2. 자바스크립트로 트리거하기
+3. 스무스한 동작은 animate CSS 속성 씀 transition 쓴다
+
+```css
+transition: all 1s; 
+모든 CSS 속성이 변경될 때 1초에 걸쳐서 서서히 변경됨
+```
+
+프로의 애니메이션 개발 팁 1
+
+margin
+
+width
+
+position
+
+left
+
+right
+
+height
+
+애니메이션 금지 (버벅일 수 있음)
+
+transform : translate() 좌표이동 시 많이 사용 X Y Z 축
+
+transform : rotate()
+
+transform : scale()
+
+이걸 쓰자
+
+프로의 애니메이션 개발 팁 2
+
+.jQuery .css(); 함수보다 .addClass(); 함수가 더 좋음
+
+addClass(); class를 부착하는 거임
+
+JS에서는 CSS를 짜지 말자
+
+최종화면에 필요한 CSS는 class에 묶어서 작성한 다음에 클래스를 뗏다 붙였다 하는 식으로 만들기
+
+그래야 복잡한 애니메이션을 만들어도 관리가 쉽다
