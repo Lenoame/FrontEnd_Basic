@@ -127,11 +127,32 @@
 
         // 만약에 지금 이메일 input에 입력된 값이 정규식과 비교했을 때 false인 경우
         // 폼전송 막기, 안내창 띄우기
-        var inputEmail =$('#email').val();
-        if ( /\S+@\S+\.\S+/.test(inputEmail) == false) {
+        var inputEmail = $('#email').val();
+        var inputPwd = $('password').val();
+        var checkEmail = "/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i";
+        var checkPwd = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+
+        if (checkEmail == false) {
           e.preventDefault();
           $('#email-alert').show();
         }
+
+        if (checkPwd == false) {
+          e.preventDefault();
+          $('#password-alert').show();
+        }
+        
+        // 공백검사
+        if(inputEmail == "") {
+          alert("아이디를 입력해주세요");
+          $('#id').focus();
+        }
+
+        if(inputPwd == "") {
+          alert("비밂번호를 입력해주세요");
+          $('#password').focus();
+        }
+
 
         // if ($('#email').val() == '') { // email에 전송된 값이 빈칸이면
         //   e.preventDefault(); // 폼전송을 막음
