@@ -58,6 +58,29 @@
       <a id="show-menu" class="btn btn-danger btn-lg" role="button">Show Menu</a>
     </div>
 
+    <h4 class="my-4 text-center">Showcase</h4>
+
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="#">
+        </div>
+        <div>
+          <img src="#">
+        </div>
+        <div>
+          <img src="#">
+        </div>
+      </div>
+    </div>
+
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+
+    <div class="my-5"></div>
+
+
     <!-- <input id="test-input"> -->
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -96,6 +119,14 @@
         // 만약에 지금 list가 안보이면 보이게 해주고요
         // 만약에 지금 list가 보이면 안보이게 해주세요
       });
+
+      $('.slide-2').click(function() {
+        $('.slide-container').css('transform', 'translateX(-100vw)');
+      });
+
+      $('.slide-3').click(function() {
+        $('.slide-container').css('transform', 'translateX(-200vw)')
+      })
     </script>
 
     <script>

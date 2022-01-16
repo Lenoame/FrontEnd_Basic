@@ -638,3 +638,38 @@ ture / false 가 남으면 결과에 따라 변하는 if 조건문으로 코드�
 \S+ 뒤에도 계속 찾아주세요
 
 \ (특수 문법기호들 escape 처리)
+
+## Carousel (이미지 슬라이드) 직접 만들기 1 : UI와 버튼기능
+Carousel (이미지 슬라이드 UI)
+
+vw = viewport width
+
+화면의 폭에 몇퍼센트를 차지할건지 정하는 단위
+
+3개의 이미지를 담는 div 박스는 300vw
+
+각각의 이미지는 100vw로 만들기
+
+넘치는 애들은 숨겨주세요
+
+Carousel을 전부 싸매는 div에 overflow: hidden
+
+애니메이션 구현하는 법
+
+1. jQuery animate()
+2. CSS transition
+3. 자바스크립트 Trigger
+4. 애니메이션 넣기
+
+늘리거나 줄였을 때 웹페이지 반응이 느리면 background-image(URL)로 넣기
+
+float가 이상하게 보이는 것은 transition문제
+
+transform속성만 1초에 걸쳐서 변하게 해주세요
+
+```jsx
+.slide-container {
+	width: 300vw;
+	transition: transform 1s;
+}
+```
