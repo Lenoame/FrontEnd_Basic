@@ -673,3 +673,48 @@ transform속성만 1초에 걸쳐서 변하게 해주세요
 	transition: transform 1s;
 }
 ```
+
+## Carousel (이미지 슬라이드) 직접만들기 2 : Next 버튼 만들기
+position: absoulute; 쓰려면 상위요소에 position: relative;를 써야한다
+
+Next 버튼을 누르면?
+
+- 지금 사진1이 보이면 사진2를 보여줌
+- 지금 사진2가 보이면 사진3을 보여줌
+
+지금 몇 번째 사진을 보고있는지 저장용
+
+사진 1을 보고있을 때 Next 버튼을 누르면..
+
+1. 사진 2 보여주기
+2. 지금 보이는 사진(변수)을 2로 바꾸기
+
+현재 몇번째 사진을 보고있는지 변수로 저장하는 패턴
+
+확장성 있는 코드로 다시 개발
+
+```css
+지금보이는사진 = 지금보이는사진 + 1;
+
+```
+
+지금 있는 변수에 1을 더해주세요
+
+변수를 글자 사이에 넣으면?
+
+‘글자’ + ‘글자’ = ‘글자글자’
+
+‘글자’ + 1 = ‘글자1’
+
+지금보이는사진 = 2 이면 -200vw 움직임 (아까 if 쓰던거랑 똑같이 동작함)
+
+```jsx
+var nowViewPicture = 1;
+
+$('.slide-next').click(function() {
+	$('.slide-container').css('transform', 'translateX(-' + nowViewPicture + '00vw)');
+	nowViewPicture = nowViewPicture + 1;
+}
+```
+
+지금보이는사진이 3이면 Next 버튼 기능 제한 (아니면 1을 더하지 말든가)

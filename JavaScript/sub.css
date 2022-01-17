@@ -84,3 +84,40 @@
   width: 300vw;
   transition: transform 1s;
 }
+
+.dot {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.dot span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  border-radius: #ccc;
+}
+
+.dot:active span {
+  background: #888;
+}
+
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  
+}
+
+.slide-next {
+  position: absolute;
+  top: 45%;
+  right: 0;
+}
