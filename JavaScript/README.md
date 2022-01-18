@@ -718,3 +718,33 @@ $('.slide-next').click(function() {
 ```
 
 지금보이는사진이 3이면 Next 버튼 기능 제한 (아니면 1을 더하지 말든가)
+
+## 스크롤 애니메이션 1 : 스크롤시 변하는 Navbar 만들기
+스크롤을 하면 메뉴가 작아지고 배경이 투명하다가 검정색으로 바뀌고 정렬되는 애니메이션 만들기
+
+1. 시작화면 제작 : 투명한 Nav
+2. 스크롤바를 내리면 불투명 Nav
+
+```jsx
+background-color: transparent; 배경 투명하게
+position: fixed;
+
+```
+
+window → 보이는 div박스(viewport)
+
+= viewport가 scroll 되었을 때... 코드를 실행해주세요
+
+css 함수보다는 클래스를 부착하는 것이 더 좋은 방법이다
+
+스크롤바를 내리자마자 동작하네? → 스크롤 ‘요만큼’ 내렸을 때 동작
+
+스크롤바를 100px 내렸을 때 동작하게 하려면?
+
+```jsx
+$(window).scorollTop();
+위에서부터 몇 px 스크롤되었는지 알려줌
+
+if ($(window).scrollTop() > 100 ) {
+	$('.nav-menu').addClass('nav-black');
+```

@@ -44,6 +44,19 @@
   justify-content: space-between;
   padding: 15px;
   align-items: center;
+  background-color: transparent;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  color: white;
+  transition: all 1s;
+  font-size: 24px;
+}
+
+.nav-black {
+  background: white;
+  color: black;
+  font-size: 16px;
 }
 
 .nav-sub {

@@ -41,6 +41,7 @@
     <div class="nav-menu">
       <h4>Shirts Studio</h4>
       <a id="nav-sub-button">Product</a>
+      
     </div>
 
     <ul class="list-group nav-sub">
@@ -146,6 +147,15 @@
       //     nowViewPicture = nowViewPicture + 1;
       //   }
       // });
+
+      // 스크롤바를 내리면..
+      //   .nav-menu이 background: white;
+      $(window).on('scroll', function() {
+        // 만약에 지금 스크롤을 100px 했을 때
+        if ($(window).scrollTop() > 100) {
+          $('.nav-menu').addClass('nav-black');
+        }
+      });
 
     </script>
 
