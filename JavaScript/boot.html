@@ -60,44 +60,23 @@
 
     <h4 class="my-4 text-center">Showcase</h4>
 
-    <div style="overflow: hidden">
-      <div class="slide-container">
-        <div class="slide-box">
-          <img src="#">
-        </div>
-        <div>
-          <img src="#">
-        </div>
-        <div>
-          <img src="#">
-        </div>
-      </div>
-    </div>
-
     <div style="overflow: hidden; position: relative;">
       <div class="slide-container">
         <div class="slide-box">
-          <img src="img/shirt1.jpg">
+          <img src="../Image/shirt1.jpeg">
+        </div>
+        <div class="slide-box">
+          <img src="../Image/shirt2.jpeg">
+        </div>
+        <div class="slide-box">
+          <img src="../Image/shirt3.jpeg">
         </div>
       </div>
-      <div class="slide-box">
-        <img src="img/shirt3.jpg">
-      </div>
-      <div class="slide-box">
-        <img src="img/shirt3.jpg">
-      </div>
       <button class="slide-next">Next</button>
+      <button class="slide-before">Before</button>
     </div>
-
-    <div class="dots">
-      <button class="dot"><span></span></button>
-      <button class="dot"><span></span></button>
-      <button class="dot-last"><span></span></button>
-    </div>
-
 
     <div class="my-5"></div>
-
 
     <!-- <input id="test-input"> -->
 
@@ -138,21 +117,26 @@
         // 만약에 지금 list가 보이면 안보이게 해주세요
       });
 
-      $('.dot').click(function() {
-        $('.slide-container').css('transform', 'translateX(-100vw)');
-      });
-
-      $('.dot-last').click(function() {
-        $('.slide-container').css('transform', 'translateX(-200vw)')
-      });
-
       var nowViewPicture = 1;
 
       $('.slide-next').click(function() {
+        if (nowViewPicture > 3) {
+          $('.slide-container').css('transform', 'translateX(0vw)');
+          nowViewPicture = 0;
         $('.slide-container').css('transform', 'translateX(-' + nowViewPicture + '00vw)');
         nowViewPicture = nowViewPicture + 1;
+        }
       });
       
+      $('.slide-before').click(function() {
+        if (nowViewPicture < 1) {
+          $('.slide-container').css('transform', 'translateX(200vw)');
+          nowViewPicture = 3;
+        }
+        nowViewPicture = nowViewPicture - 1;
+        $('.slide-container').css('transform', 'translateX(-' + nowViewPicture + '00vw)');
+      });
+
       // 아래 코드와 똑같이 동작함
       //   if (nowViewPicture == 1) {
       //   $('.slide-container').css('transform', 'translateX(-100vw)');
@@ -160,10 +144,8 @@
       // } else if (nowViewPicture == 2) {
       //     $('.slide-container').css('transform', 'translateX(-200vw)');
       //     nowViewPicture = nowViewPicture + 1;
-        }
-
-
-      });
+      //   }
+      // });
 
     </script>
 
