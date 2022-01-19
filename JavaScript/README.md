@@ -719,7 +719,7 @@ $('.slide-next').click(function() {
 
 지금보이는사진이 3이면 Next 버튼 기능 제한 (아니면 1을 더하지 말든가)
 
-## 스크롤 애니메이션 1 : 스크롤시 변하는 Navbar 만들기
+## 스크롤 애니메이션 : 스크롤시 변하는 Navbar 만들기
 스크롤을 하면 메뉴가 작아지고 배경이 투명하다가 검정색으로 바뀌고 정렬되는 애니메이션 만들기
 
 1. 시작화면 제작 : 투명한 Nav
@@ -727,8 +727,7 @@ $('.slide-next').click(function() {
 
 ```jsx
 background-color: transparent; 배경 투명하게
-position: fixed;
-
+position: fixed; 고정시키기
 ```
 
 window → 보이는 div박스(viewport)
@@ -747,4 +746,5 @@ $(window).scorollTop();
 
 if ($(window).scrollTop() > 100 ) {
 	$('.nav-menu').addClass('nav-black');
+}
 ```

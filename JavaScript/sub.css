@@ -49,14 +49,11 @@
   z-index: 5;
   width: 100%;
   color: white;
-  transition: all 1s;
-  font-size: 24px;
 }
 
 .nav-black {
   background: white;
   color: black;
-  font-size: 16px;
 }
 
 .nav-sub {
@@ -117,4 +114,13 @@
 
 .slide-container img {
   width: 100vw;
+}
+
+.large-logo {
+  font-size: 30px;
+  transition: all 0.5s;
+}
+
+.small-logo {
+  font-size: 22px;
 }
