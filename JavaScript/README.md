@@ -748,3 +748,36 @@ if ($(window).scrollTop() > 100 ) {
 	$('.nav-menu').addClass('nav-black');
 }
 ```
+
+## 탭기능 만들기
+탭 버튼 기능 만들기
+
+1. 버튼을 누르면 누른 느낌나게 디자인해주고
+2. 해당하는 탭의 내용이 보임
+
+tab-content에 다 display: none; 을 주고 show를 부착하면 원하는 내용을 보여줄 수 있음
+
+active를 부착하면 버튼을 주황색으로 표시해줌
+
+첫번째 버튼을 누르면 첫번째 버튼 하이라이트 + 첫째 내용을 보여주면 되겠군
+
+JavaScript 파일 첨부
+
+```html
+<script src="tab.js"></script>
+```
+
+팁 : 뭐든 일단 하나만 먼저 개발하면 쉽다
+
+- 첫째 버튼의 기능만 먼저 개발해보자
+
+```jsx
+// .eq()는 몇 번째 있는 클래스를 지정할 수 있는 함수
+$('.tab-button').eq(0).click(function() {
+	$('.tab-button').eq(0).addClass('active');
+	$('.tab-content').eq(0).addClass('show');
+});
+```
+
+1. 다른 버튼에 붙은 주황색 제거하는 기능 추가해야...
+2. 다른 탭내용들 숨기는 기능도 추가해야
