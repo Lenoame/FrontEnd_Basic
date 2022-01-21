@@ -26,7 +26,9 @@
 // });
 
 // 위 코드와 똑같이 동작한다
-for (let i = 0; i < 3; i++) {
+let tabList = document.querySelectorAll('.tab-content .list li')
+
+for (let i = 0; i < tabList; i++) {
   $('.tab-button').eq(i).click(function() {
     $('tab-button').removeClass('active');
     $('tab-content').removeClass('show');
