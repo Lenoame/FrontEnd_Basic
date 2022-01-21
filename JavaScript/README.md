@@ -781,3 +781,78 @@ $('.tab-button').eq(0).click(function() {
 
 1. 다른 버튼에 붙은 주황색 제거하는 기능 추가해야...
 2. 다른 탭내용들 숨기는 기능도 추가해야
+
+```jsx
+$('.tab-button').eq(0).click(function() {
+  $('tab-button').removeClass('active');
+  $('tab-content').removeClass('show');
+	$('.tab-button').eq(0).addClass('active');
+	$('.tab-content').eq(0).addClass('show');
+});
+
+$('.tab-button').eq(1).click(function() {
+  $('tab-button').removeClass('active');
+  $('tab-content').removeClass('show');
+	$('.tab-button').eq(1).addClass('active');
+	$('.tab-content').eq(1).addClass('show');
+});
+
+$('.tab-button').eq(2).click(function() {
+  $('tab-button').removeClass('active');
+  $('tab-content').removeClass('show');
+	$('.tab-button').eq(2).addClass('active');
+	$('.tab-content').eq(2).addClass('show');
+});
+
+for (let i = 0; i < 3; i++) {
+  $('.tab-button').eq(i).click(function() {
+    $('tab-button').removeClass('active');
+    $('tab-content').removeClass('show');
+    $('.tab-button').eq(i).addClass('active');
+    $('.tab-content').eq(i).addClass('show');
+  });
+}
+```
+
+코드가 유사해보임
+
+코드를 반복해주는 반복문 사용
+
+```jsx
+for (var i = 0; i < 3; i++) {
+	console.log('안녕')
+}
+```
+
+{중괄호} 내의 코드를 3번 반복해주세요~~
+
+for 반복문의 원리
+
+반복문을 돌 때마다 i에 1을 더해주세요
+
+i = 0 / 반복문 1회 실행 / i에 1을 더함
+
+i = 1 / 반복문 1회 실행 / i에 1을 더함
+
+i = 2 / 반복문 1회 실행 / i에 1을 더함
+
+i = 3 / i < 3을 만족하지 않아서 멈춤
+
+반복문에서는 var 말고 let을 쓰자
+
+for 반복문 안에 이벤트리스너 안에 i 변수가 있으면 let으로 바꿔야 잘 동작한다
+
+반복문을 써도 확장성있는 코드가 아직 아니다
+
+탭 4개면 4라고 수정해야되기 때문
+
+```jsx
+for (let i = 0; i < 지금 html tab-button의 개수; i++) {
+  $('.tab-button').eq(i).click(function() {
+    $('tab-button').removeClass('active');
+    $('tab-content').removeClass('show');
+    $('.tab-button').eq(i).addClass('active');
+    $('.tab-content').eq(i).addClass('show');
+  });
+}
+```
