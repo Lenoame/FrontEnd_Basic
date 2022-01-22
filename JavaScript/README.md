@@ -856,3 +856,86 @@ for (let i = 0; i < 지금 html tab-button의 개수; i++) {
   });
 }
 ```
+
+## 이벤트 버블링과 이벤트 함수
+기능을 하나 추가할 것임 : 배경을 누르고 모달창이 닫히는 기능
+
+이벤트 버블링
+
+이벤트가 상위요소로 퍼지는 현상 → 이메일 인풋을 클릭하면 밖에 있는 부모요소로 전부 퍼지는 현상(상위요소도 다 클릭했다고 인지함)
+
+검은배경을 누르면 모달창이 닫히는 기능
+
+```jsx
+$('.black-background').click(function() {
+  $('.black-background').hide();
+});
+// 모달창 내 다른 요소를 눌러도 닫히는 버그가 있다
+```
+
+코드를 잘 짜긴 잘 짰는데 이벤트 버블링 현상때메 그렇다 → 매우 자주 동작하기 때문에 그렇다
+
+이벤트 버블링 때문에 모달창 내 다른 요소를 눌러도 닫힘
+
+이벤트리스너 안에서 쓸 수 있는 이벤트 함수
+
+```jsx
+e.target; // 지금 실제로 클릭한 요소
+e.currentTarget; // 지금 이벤트리스너가 달린 곳
+$(this); // == e.currentTarget
+e.preventDefault(); // 기본동작 막기
+```
+
+e.currentTarget == $(this)
+
+console.log(e.target);
+
+e.target은 <p></p> 같은 HTML 태그가 나와요
+
+```jsx
+$('.black-background').click(function(e) {
+	if (e.target == e.currentTarget) {
+		$('.black-background').hide();
+	}
+});
+```
+
+```jsx
+$('.black-background').click(function(e) {
+  // 만약, 지금 실제로 클릭한게 검은 배경일 때만 모달창을 닫아주세요
+
+  if (e.target == $('.black-background')) {
+    $('.black-background').hide();
+  }
+});
+// black-background를 클릭해도 안 닫힌다
+// 셀렉터로 찾은 것은 안됨
+// e.target은 생 JS 문법이고 $()은 jQuery 문법 
+```
+
+위 두 코드는 약간 다르다
+
+e.target과 jQuery Object는 다르다
+
+자바스크립트는 자바스크립트로 찾은 것만 비교가 되고
+
+제이쿼리는 제이쿼리로 찾은 것만 같다고 할 수 있음
+
+```jsx
+// 두 개가 똑같이 작동한다
+$('.black-background').click(function() {
+	if (e.target == this) {
+		$('.black-background').hide();
+	}
+});
+
+$('.black-background').click(function(e) {
+	if (e.target == e.currentTarget) {
+		$('.black-background').hide();
+	}
+});
+```
+
+이벤트 버블링이 일어나고 있는 것을 항상 신경쓰기
+
+if, e.target 등으로 버블링 때문에 일어나는 버그 대처가능

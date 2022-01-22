@@ -26,9 +26,9 @@
 // });
 
 // 위 코드와 똑같이 동작한다
-let tabList = document.querySelectorAll('.tab-content .list li')
+// let tabList = document.querySelectorAll('.tab-content .list li')
 
-for (let i = 0; i < tabList; i++) {
+for (let i = 0; i < $('.tab-button').length; i++) {
   $('.tab-button').eq(i).click(function() {
     $('tab-button').removeClass('active');
     $('tab-content').removeClass('show');
@@ -36,3 +36,12 @@ for (let i = 0; i < tabList; i++) {
     $('.tab-content').eq(i).addClass('show');
   });
 }
+
+$('.black-background').click(function(e) {
+  // 만약, 지금 실제로 클릭한게 검은 배경일 때만 모달창을 닫아주세요
+
+  if (e.target == e.currentTarget) {
+    $('.black-background').hide();
+  }
+});
+
