@@ -28,14 +28,24 @@
 // 위 코드와 똑같이 동작한다
 // let tabList = document.querySelectorAll('.tab-content .list li')
 
-for (let i = 0; i < $('.tab-button').length; i++) {
-  $('.tab-button').eq(i).click(function() {
-    $('tab-button').removeClass('active');
-    $('tab-content').removeClass('show');
-    $('.tab-button').eq(i).addClass('active');
-    $('.tab-content').eq(i).addClass('show');
-  });
+function openTap(num) {
+  $('tab-button').removeClass('active');
+  $('tab-content').removeClass('show');
+  $('.tab-button').eq(num).addClass('active');
+  $('.tab-content').eq(num).addClass('show');
 }
+
+// for (let i = 0; i < $('.tab-button').length; i++) {
+//   $('.tab-button').eq(i).click(function() {
+//     openTap(i);
+//   });
+// }
+
+$('.list').click(function(e) {
+  if(e.target == document.querySelectorAll('.tab-button')) {
+    openTap(e.target.dataset.id);
+  }
+});
 
 $('.black-background').click(function(e) {
   // 만약, 지금 실제로 클릭한게 검은 배경일 때만 모달창을 닫아주세요

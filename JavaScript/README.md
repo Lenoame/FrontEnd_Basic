@@ -939,3 +939,86 @@ $('.black-background').click(function(e) {
 이벤트 버블링이 일어나고 있는 것을 항상 신경쓰기
 
 if, e.target 등으로 버블링 때문에 일어나는 버그 대처가능
+
+## 탭기능 다시만들기 : 이벤트 버블링 응용과 dataset
+함수로 축약할 때 확인해야할 점 → 함수안의 변수는 정의해주셈
+
+```jsx
+function openTap(num) {
+  $('tab-button').removeClass('active');
+  $('tab-content').removeClass('show');
+  $('.tab-button').eq(num).addClass('active');
+  $('.tab-content').eq(num).addClass('show');
+}
+
+for (let i = 0; i < $('.tab-button').length; i++) {
+  $('.tab-button').eq(i).click(function() {
+    openTap(i);
+  });
+}
+```
+
+이벤트리스너를 총 3개 사용했는데 1개 써도 가능
+
+이벤트리스너 적게 사용하면 메모리 절약가능
+
+<ul>에 이벤트리스너 달아서 탭기능 만들기
+
+e.target을 쓰려면 함수에 파라미터 추가해주기
+
+e.target출력하면 <어쩌구> 나옴
+
+HTML에 몰래 정보심기
+
+data-작명=”값”
+
+```jsx
+<div class="container mt-5">
+	<ul class="list">
+		<li id="product" class="tab-button" data-id="0">Products</li>
+		<li class="tab-button active" data-id="1">Information</li>
+		<li class="tab-button" data-id="2">Shipping</li>
+	</ul>
+```
+
+```jsx
+$('.list').click(function(e) {
+  // 만약 내가 실제 누른 요소가 버튼 0이면 0번째 탭 열어주셈...
+  if(e.target == document.querySelectorAll('.tab-button')[0]) {
+    openTap(0);
+  }
+  if(e.target == document.querySelectorAll('.tab-button')[1]) {
+    openTap(1);
+  }
+  if(e.target == document.querySelectorAll('.tab-button')[2]) {
+    openTap(2);
+  }
+});
+
+$('.list').click(function(e) {
+	openTap(내가누른버튼에숨겨져있던숫자)
+});
+```
+
+```jsx
+$('.list').click(function(e) {
+  if(e.target == document.querySelectorAll('.tab-button')) {
+    openTap(e.target.dataset.id);
+  }
+});
+```
+
+정보 꺼내려면 HTML요소.dataset.작명
+
+위에 있는 코드의 아이디에 적힌 숫자를 출력해준다
+
+```jsx
+$('list').data('id', '2');
+```
+
+jQuery문법으로 HTML에 몰래 정보저장하는 법
+
+오늘의 교훈
+
+1. 이벤트리스너 절약도 가능
+2. HTML안에 몰래 정보저장 가능
