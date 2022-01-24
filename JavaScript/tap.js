@@ -55,3 +55,15 @@ $('.black-background').click(function(e) {
   }
 });
 
+// Array Object
+var array = ['BMW', 520];
+// console.log(array[1]);
+
+var object = { brand : 'BMW', model : 520 };
+// console.log(object.brand);
+
+var data = [ {brand : 'BMW'}, {model : 520} ];
+
+document.getElementById('title').innerHTML = array[0];
+document.getElementById('text').innerHTML = data[1].model;
+

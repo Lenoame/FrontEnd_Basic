@@ -1022,3 +1022,62 @@ jQuery문법으로 HTML에 몰래 정보저장하는 법
 
 1. 이벤트리스너 절약도 가능
 2. HTML안에 몰래 정보저장 가능
+
+## Array 와 Object 자료형 기초
+자료형 정리
+
+- 문자
+- 숫자
+- array
+- object
+
+array & object
+
+- 여러가지 자료를 한 곳에 저장하고 싶을 때 사용
+
+Array
+
+- [대괄호]로 생성
+- 자료들을 콤마로 구분
+- [숫자]으로 자료 출력
+
+```jsx
+var array = ['BMW', 520];
+console.log(array[1]);
+```
+
+Object
+
+- {중괄호}로 생성
+- 자료들을 콤마로 구분
+- 자료 왼쪽에 이름써야함
+- key : value 로 구성된다
+- 마침표로 자료뽑음
+- key는 자료의 이름일 뿐 실제 자료는 value이다
+- 자료로 배열, 오브젝트도 들어갈 수 있다
+- 오브젝트는 순서개념이 없다. 이름만 있음.
+
+```jsx
+var object = { brand : 'BMW', model : 520 };
+console.log(object.brand);
+```
+
+array 내의 상품 데이터를 꺼내 HTML에 넣어보자 (데이터바인딩)
+
+```jsx
+<h4 id="title">상품제목</h4>
+	<p id="text">상품내용</p>
+	<div style="margin-bottom: 500px"></div>
+
+// 배열 데이터바인딩
+var array = ['BMW', 520];
+document.getElementById('title').innerHTML = array[0];
+
+// 오브젝트 데이터바인딩
+var object = { brand : 'BMW', model : 520 };
+document.getElementById('text').innerHTML = object.model;
+
+// 배열 안에 오브젝트가 있을 경우
+var data = [ {brand : 'BMW'}, {model : 520} ];
+document.getElementById('text').innerHTML = data[1].model;
+```
