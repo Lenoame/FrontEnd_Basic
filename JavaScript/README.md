@@ -1081,3 +1081,59 @@ document.getElementById('text').innerHTML = object.model;
 var data = [ {brand : 'BMW'}, {model : 520} ];
 document.getElementById('text').innerHTML = data[1].model;
 ```
+
+## 인터랙티브 form 만들기 : input과 change 이벤트
+다이나믹한 form UI
+
+셔츠를 고르면 셔츠 사이즈를 고르는 select 폼 보여주기
+
+```html
+<form class="container my-5">
+	<div class="form-group">
+		<p>상품선택</p>
+			<select class="form-control" id="option1">
+        <option>모자</option>
+        <option>셔츠</option>
+      </select>
+
+		<p class="mt-4">사이즈선택</p>
+			<select class="form-control" id="option1">
+				<option>95</option>
+        <option>100</option>
+        <option>105</option>
+      </select>
+  </div>
+</form>
+```
+
+간략한 form event 설명
+
+input 값이 바뀔 때마다 이벤트가 발동된다
+
+```jsx
+$('어떤인풋').on('input', function() {
+	
+});
+
+$('어떤인풋').on('change', function() {
+	// select 값을 바꾸면 내부 코드를 실행해주세요	
+});
+```
+
+<select>는 focus랑 상관없음
+
+input 이벤트 : input 값이 바뀔 때
+
+change 이벤트 : input 값이 바뀌고 focus 잃을 때
+
+모자를 고르면 셔츠 사이즈를 고르는 select 폼 숨기기
+
+```jsx
+$('#option1').on('change', function() {
+	// 만약에 사용자가 선택한 값이 셔츠인 경우에 밑에 UI를 보여줌
+	if($('#option1').val() == '셔츠') {
+		$('.size-select').show();
+	} else {
+		$('.size-select').hide();
+});
+```
