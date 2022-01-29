@@ -168,5 +168,5 @@ ul.list::after {
 }
 
 .size-select {
-  display: none;
+  display: block;
 }

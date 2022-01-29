@@ -25,9 +25,7 @@
       <div class="size-select">
         <p class="mt-4">사이즈선택</p>
         <select class="form-control" id="option2">
-          <option>95</option>
-          <option>100</option>
-          <option>105</option>
+
         </select>
       </div>
   
@@ -38,11 +36,21 @@
     $('#option1').on('change', function() {
       // 만약에 사용자가 선택한 값이 셔츠인 경우에 밑에 UI를 보여줌
       if($('#option1').val() == '셔츠') {
-        $('.size-select').show();
-      } else {
-        $('.size-select').hide();
+        // 템플릿을 만들고
+        $('#option2').html('');
+        var template = `<option>95</option>
+        <option>100</option>
+        <option>105</option>`;
+        $('#option2').append(template);
+      } else if ($('#option1').val() == '바지'){
+        $('#option2').html('');
+        var template = `<option>28</option>
+        <option>30</option>
+        <option>32</option>`;
+        $('#option2').append(template);
       }
     });
+
   </script>
   
     <!-- Optional JavaScript; choose one of the two! -->

@@ -1137,3 +1137,41 @@ $('#option1').on('change', function() {
 		$('.size-select').hide();
 });
 ```
+
+## 인터랙티브 form 만들기 2 : HTML을 동적으로 생성하기
+여태까지 했던 짓 → UI를 미리 만들어놓고 특정 상황에서 보여줌
+
+지금 할짓 → HTML을 자바스크립트로 짜서 넣기
+
+JavaScript로 HTML을 만들고 집어넣는 법 : 문자 자료형 안에 담으면 됩니다
+
+신 자바스크립트 문법 `문자 자료형`은 내부에 엔터키 가능
+
+셔츠를 선택하면 <option> 세개를 만들어서 집어넣음
+
+```jsx
+$('#option1').on('change', function() {
+	// 만약에 사용자가 선택한 값이 셔츠인 경우에 밑에 UI를 보여줌
+		if($('#option1').val() == '셔츠') {
+			// 템플릿을 만들고
+			$('#option2').html('');
+      var template = `<option>95</option>
+      <option>100</option>
+      <option>105</option>`;
+      $('#option2').append(template);
+    } else if ($('#option1').val() == '바지'){
+      $('#option2').html('');
+      var template = `<option>28</option>
+      <option>30</option>
+      <option>32</option>`;
+      $('#option2').append(template);
+		}
+});
+```
+
+```jsx
+if ($('#option1').val() == '바지'){
+	$('#option2').html('');
+}
+// option2에 있는 html을 전부 빈칸으로 만들어줘야 중복적으로 추가가 되지 않는다
+```
