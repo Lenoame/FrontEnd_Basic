@@ -1175,3 +1175,72 @@ if ($('#option1').val() == '바지'){
 }
 // option2에 있는 html을 전부 빈칸으로 만들어줘야 중복적으로 추가가 되지 않는다
 ```
+
+## 인터랙티브 form 만들기 3 : forEach 반복문을 사용해보자
+바지사이즈 <option>이 매우 많으면?
+
+- 일단 데이터를 정리
+
+```jsx
+var size = [26, 28, 30, 32, 34, 36];
+$('#option1').on('change', function() {
+	if ($('#option1').val() == '바지') {
+		for (var i = 0; i < 6; i++) {
+			var template = `<option>26</option>`;
+			$('#option2').append(template);
+		}
+	}
+});
+```
+
+반복문으로 26, 28, 30 ... option을 생성하려면?
+
+반복문이 돌 때 26, 28, 30 ... 이 되는 변수? 를 넣자
+
+```jsx
+var template = `<option>${변수}</option>`;
+// 최신 자바스크립트 문법
+```
+
+```jsx
+var size = [26, 28, 30, 32, 34, 36];
+
+$('#option1').on('change', function() {
+	if($('#option1').val() == '바지') {
+		for (var i = 0; i < 6; i++) {
+			var template = `<option>${size[i]}}</option>`;
+			$('#option2').append(template);
+		}
+	}
+});
+```
+
+일반 따옴표 중간에 변수 넣기 : ‘문자’ + 변수 + ‘문자’
+
+array.forEach() 로 반복하기
+
+```jsx
+var size = [26, 28, 30, 32, 34, 36];
+
+$('#option1').on('change', function() {
+	if($('#option1').val() == '바지') {
+		// 배열 안에 있는 요소를 반복해준다
+		size.forEach(function(i) {
+			// 왼쪽 array 자료 갯수만큼 반복해주셈. 6번 반복해줌.
+			// i값은 사이즈 안에 있는 하나하나의 데이터
+			var template = `<option>${i}</option>`;
+			$('#option2').append(template);
+		});
+	}
+});
+```
+
+왼쪽 array 자료 갯수만큼 반복해주셈
+
+1. 반복문을 이용해 HTML 생성하기
+2. forEach()로 반복하기
+
+반복문의 용도
+
+1. 그냥 코드 반복
+2. [Array] {Object} 안에 있는 자료 출력

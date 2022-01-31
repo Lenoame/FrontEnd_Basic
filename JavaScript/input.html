@@ -51,6 +51,21 @@
       }
     });
 
+    var size = [26, 28, 30, 32, 34, 36];
+
+    $('#option1').on('change', function() {
+      if($('#option1').val() == '바지') {
+        size.forEach(function(i) {
+          var template = `<option>${i}</option>`;
+          $('#option2').append(template);
+        });
+        // for (var i = 0; i < 6; i++) {
+        //   var template = `<option>${size[i]}}</option>`;
+        //   $('#option2').append(template);
+        // }
+      }
+    });
+
   </script>
   
     <!-- Optional JavaScript; choose one of the two! -->
